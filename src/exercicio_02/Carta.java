@@ -9,12 +9,12 @@ package exercicio_02;
  * <p>
  * Espadas: 0000 0110 -->6
  */
-public class Carta {
+public class Carta implements Comparable {
     private int numero;
     private String simbolo;
     private int naipe;
     private int id;
-    private static String[] naipes = {"Ouros", "Copas", "Espadas", "Paus"};
+    private static String[] naipes = {"Ouros", "Espadas", "Copas", "Paus"};
 
     Carta(int id) {
         this.id = id;
@@ -34,5 +34,27 @@ public class Carta {
             System.out.println("[" + simbolo + "] de " + naipes[naipe]);
         else
             System.out.println("[" + numero + "] de " + naipes[naipe]);
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Carta c = (Carta) o;
+
+//        // comparação original, menor para maior
+//        int menor = -1;
+//        int maior = 1;
+
+        // Inverter comparação para exercicio
+        int menor = 1;
+        int maior = -1;
+
+
+        if (this.numero < c.numero) {
+            return menor;
+        } else if (this.numero > c.numero) {
+            return maior;
+        }
+        if (this.naipe < c.naipe) return maior;
+        return menor;
     }
 }
