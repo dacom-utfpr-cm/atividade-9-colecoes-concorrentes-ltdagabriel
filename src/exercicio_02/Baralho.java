@@ -13,14 +13,14 @@ public class Baralho {
         for (int i = 0; i < 52; i++) {
             cartas.add(new Carta(i));
         }
-//        embaralhar();
+        embaralhar();
     }
 
     private void embaralhar() {
         Collections.shuffle(cartas);
     }
 
-    private boolean vazio() {
+     boolean vazio() {
         return cartas.size() == 0;
 
     }

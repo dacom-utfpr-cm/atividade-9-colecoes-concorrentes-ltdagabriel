@@ -1,7 +1,6 @@
 package exercicio_02;
 
-import java.util.PriorityQueue;
-import java.util.concurrent.Phaser;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.PriorityBlockingQueue;
 
 public class Main {
@@ -18,25 +17,15 @@ public class Main {
 
 
     public static void main(String args[]) {
-        Baralho b = new Baralho();
-        for (int i = 0; i < 52; i++) {
-            b.get().print();
-        }
+
+        CountDownLatch readyThreadCounter = new CountDownLatch(10);
+        PriorityBlockingQueue<Carta> q = new PriorityBlockingQueue<>(10);
+
+        new Thread(new Prudutor(q,readyThreadCounter)).start();
+
+        new Thread(new Consumidor(q,readyThreadCounter)).start();
+        new Thread(new Consumidor(q, readyThreadCounter)).start();
 
 
-//        PriorityBlockingQueue<Carta> q = new PriorityBlockingQueue<>(10);
-//        q.add(b.get());
-//        q.add(b.get());
-//        q.add(b.get());
-//
-//        Phaser phaser = new Phaser(1);
-//
-//        new Thread(()->{
-//
-//        }).start();
-//
-
-
-//        System.out.println(q.size());
     }
 }

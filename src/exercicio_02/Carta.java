@@ -54,7 +54,7 @@ public class Carta implements Comparable {
         } else if (this.numero > c.numero) {
             return maior;
         }
-        if (this.naipe < c.naipe) return maior;
+        if (this.naipe > c.naipe) return maior;
         return menor;
     }
 }
