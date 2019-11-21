@@ -3,12 +3,12 @@ package exercicio_02;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.PriorityBlockingQueue;
 
-public class Prudutor implements Runnable {
+public class Produtor implements Runnable {
     private final PriorityBlockingQueue<Carta> q;
     Baralho b = new Baralho();
     private CountDownLatch readyThreadCounter;
 
-    public Prudutor(PriorityBlockingQueue<Carta> q, CountDownLatch readyThreadCounter) {
+    public Produtor(PriorityBlockingQueue<Carta> q, CountDownLatch readyThreadCounter) {
         this.q = q;
         this.readyThreadCounter = readyThreadCounter;
     }

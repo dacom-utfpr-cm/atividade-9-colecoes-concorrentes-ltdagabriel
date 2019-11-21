@@ -22,7 +22,7 @@ public class Main {
         CountDownLatch readyThreadCounter = new CountDownLatch(10);
         PriorityBlockingQueue<Carta> q = new PriorityBlockingQueue<>(10);
 
-        new Thread(new Prudutor(q, readyThreadCounter)).start();
+        new Thread(new Produtor(q, readyThreadCounter)).start();
 
         new Thread(new Consumidor(q, readyThreadCounter)).start();
         new Thread(new Consumidor(q, readyThreadCounter)).start();
