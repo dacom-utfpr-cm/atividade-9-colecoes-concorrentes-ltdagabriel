@@ -4,8 +4,8 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.PriorityBlockingQueue;
 
 public class Prudutor implements Runnable {
-    Baralho b = new Baralho();
     private final PriorityBlockingQueue<Carta> q;
+    Baralho b = new Baralho();
     private CountDownLatch readyThreadCounter;
 
     public Prudutor(PriorityBlockingQueue<Carta> q, CountDownLatch readyThreadCounter) {

@@ -1,5 +1,6 @@
 package exercicio_02;
 
+
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.PriorityBlockingQueue;
 
@@ -21,9 +22,9 @@ public class Main {
         CountDownLatch readyThreadCounter = new CountDownLatch(10);
         PriorityBlockingQueue<Carta> q = new PriorityBlockingQueue<>(10);
 
-        new Thread(new Prudutor(q,readyThreadCounter)).start();
+        new Thread(new Prudutor(q, readyThreadCounter)).start();
 
-        new Thread(new Consumidor(q,readyThreadCounter)).start();
+        new Thread(new Consumidor(q, readyThreadCounter)).start();
         new Thread(new Consumidor(q, readyThreadCounter)).start();
 
 

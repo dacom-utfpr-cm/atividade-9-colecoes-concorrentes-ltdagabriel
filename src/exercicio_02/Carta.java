@@ -10,11 +10,11 @@ package exercicio_02;
  * Espadas: 0000 0110 -->6
  */
 public class Carta implements Comparable {
+    private static String[] naipes = {"Ouros", "Espadas", "Copas", "Paus"};
     private int numero;
     private String simbolo;
     private int naipe;
     private int id;
-    private static String[] naipes = {"Ouros", "Espadas", "Copas", "Paus"};
 
     Carta(int id) {
         this.id = id;

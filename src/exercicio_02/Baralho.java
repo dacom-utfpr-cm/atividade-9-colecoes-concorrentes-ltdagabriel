@@ -8,7 +8,6 @@ public class Baralho {
     List<Carta> cartas = new ArrayList<>();
 
 
-
     Baralho() {
         for (int i = 0; i < 52; i++) {
             cartas.add(new Carta(i));
@@ -20,7 +19,7 @@ public class Baralho {
         Collections.shuffle(cartas);
     }
 
-     boolean vazio() {
+    boolean vazio() {
         return cartas.size() == 0;
 
     }
